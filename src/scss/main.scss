@@ -1,0 +1,126 @@
+@import './variable.scss';
+@import './mixin.scss';
+
+button{
+    &:hover{
+        opacity: 0.8;
+    }
+}
+:hover {
+    transition: all 0.22s ease-in-out;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // background-color: rgba($secondary-light, 0.2);
+    width: 100%;
+}
+a{
+    background-color: unset;
+    text-decoration: unset;
+    color: unset;
+}
+button{
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+    padding: 8px 16px;
+    width: unset;
+}
+.btn-secondary {
+    background-color: $secondary;
+    margin-bottom: 20px;
+    &:active{
+        background-color: $primary-light;
+    }
+}
+.nav{
+    ul{
+        @include flex-center;
+        gap: 28px;
+        list-style-type: none;
+        width: 100%;
+        padding: 12px 20px;
+        background-color: $secondary;
+        li{
+            padding: 5px 12px;
+            background-color: $secondary;
+            color: $primary;
+            cursor: pointer;
+            width: fit-content;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+.main{
+    min-height: calc(100vh - 52px);
+    padding: 40px 24px;
+    .heading-withBg{
+        padding: 16px 20px;
+        background-color: $primary;
+        color: $white;
+        margin-bottom: 20px;
+    }
+    .gridCards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 44px;
+        &.categorySub{
+            grid-template-columns: repeat(5,1fr);
+            gap: 44px; 
+            .gridCard{
+                &:hover {
+                    opacity: 1;
+                }
+                .cardHead{
+                    font-size: 15px;
+                } 
+            }
+        }
+        &.single-grid {
+            grid-template-columns: 1fr;
+            width: 40%;
+            margin: auto;
+            .gridCard{
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        .gridCard{
+            border: 1px solid rgba($primary-light, 0.4);
+            padding: 24px 12px;
+            border-radius: 6px;
+            background-color: rgba($primary-light, 0.2);
+            &:hover {
+                opacity: 0.8;
+            }
+            .cardHead{
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 16px;
+                color: $primary;
+            }
+            .cardImage{
+                width: 60%;
+                object-fit: contain;
+                display: flex;
+                margin: auto;
+            }
+            button {
+                background-color: $primary;
+                color: $white;
+                width: 60%;
+                @include flex-center;
+                margin: auto;
+                margin-top: 12px;
+                &:active{
+                    background-color: $secondary-light;
+                }
+            }
+        }
+    }
+}
